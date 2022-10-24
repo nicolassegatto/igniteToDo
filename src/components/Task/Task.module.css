@@ -10,3 +10,8 @@
 .taskLabel{
   color: var(--gray-100);
 }
+
+.taskLabelChecked{
+  color: var(--gray-300);
+  text-decoration: line-through;
+}

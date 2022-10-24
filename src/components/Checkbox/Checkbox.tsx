@@ -1,9 +1,13 @@
 import styles from  './Checkbox.module.css'
 
-export function Checkbox(){
+interface checked {
+  done: boolean
+}
+
+export function Checkbox({done}: checked){
   return(
     <div>
-      <input className={styles.inputCheck} type="checkbox" />
+      <input className={styles.inputCheck} type="checkbox" checked={done}/>
     </div>
   )
 }

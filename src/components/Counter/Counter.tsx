@@ -1,7 +1,14 @@
 import styles from './Counter.module.css'
 
-export function Counter(){
+interface counterProps {
+  id : 'total' | 'concluido',
+  total: number,
+  concluido: number,
+}
+
+
+export function Counter({id, total, concluido} : counterProps){
  return(
-  <span className={styles.counter}>0</span>
+  <span className={styles.counter}>{id === 'total' ? (total) : (`${concluido} de ${total}`)}</span>
  )
 }

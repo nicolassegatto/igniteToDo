@@ -1,13 +1,17 @@
 import { Checkbox } from '../Checkbox/Checkbox'
 import { Lixeira } from '../Lixeira/Lixeira'
-
 import styles from  './Task.module.css'
 
-export function Task(){
+interface TaskProps {
+  done: boolean,
+  task: string
+}
+
+export function Task({done, task}: TaskProps){
   return(
     <div className={styles.task} >
-      <Checkbox/>
-      <label className={styles.taskLabel}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
+      <Checkbox done={done} />
+      <label className={done ? styles.taskLabelChecked : styles.taskLabel}>{task}</label>
       <Lixeira/>
     </div>
   )

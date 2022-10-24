@@ -6,9 +6,24 @@ import styles from './Home.module.css'
 import { Task } from "../components/Task/Task";
 import { EmptyTask } from "../components/Emptytask/Emptytask";
 
-export function Home() {
+interface ListsProps {
+  id: number,
+  done: boolean,
+  task: string
+}
 
-  let task = 1;
+const lists: ListsProps[] = [
+  {
+    id: 1,
+    done: true,
+    task: 'Fazer Bot de vendas com interface amigavel e valores aplicados automaticamente pelas APIS, demanda Marcelo.'
+  },
+]
+
+const total = lists.length
+const concluido = lists.map(OBJ => {OBJ.done === true}).length
+
+export function Home() {
 
   return (
     <div>
@@ -23,16 +38,17 @@ export function Home() {
         <div className={styles.formTasks}>
 
           <div className={styles.counterTasks}>
-            <span className={styles.createdTasks}>Tarefas criadas <Counter /> </span>
-            <span className={styles.concluedTasks}>Concluidas <Counter /> </span>
+            <span className={styles.createdTasks}>Tarefas criadas <Counter id={'total'} total={total} concluido={concluido}/> </span>
+            <span className={styles.concluedTasks}>Concluidas <Counter id={'concluido'} total={total} concluido={concluido} /> </span>
           </div>
 
-          {task <= 0 ? (
-            <EmptyTask />
-          ) : (
+          {lists.length <= 0 ? ( <EmptyTask /> ) : (
             <div className={styles.tasks}>
-              <Task />
-              <Task />
+              {lists.map(task => {
+                return (
+                  <Task key={task.id} done={task.done} task={task.task} />
+                )
+              })}
             </div>
           )}
         </div>

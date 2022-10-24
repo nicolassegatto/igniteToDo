@@ -1,0 +1,16 @@
+.trash{
+  box-sizing: content-box;
+  height: 24px;
+  width: 24px;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash:hover{
+  background: var(--gray-400);
+  color: var(--red-500);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}

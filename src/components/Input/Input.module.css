@@ -1,0 +1,14 @@
+.InputText{
+  flex: 1;
+  font-size: 1rem;
+  background: var(--gray-500) ;
+  border-radius: 0.5rem;
+  color: var(--gray-100);
+  padding: 1rem;
+  border:  none;
+}
+
+.InputText:focus {
+
+  outline: 0.1250rem solid var(--purple-500);
+}

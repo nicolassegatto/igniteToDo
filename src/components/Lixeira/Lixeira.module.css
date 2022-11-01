@@ -1,3 +1,14 @@
+.trashButton{
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem ;
+  border-radius: 0.125rem;
+}
+
 .trash{
   box-sizing: content-box;
   height: 24px;

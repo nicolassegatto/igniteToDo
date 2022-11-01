@@ -9,8 +9,21 @@
  align-items: center;
  gap: 0.2rem;
  cursor: pointer;
+ transition: opacity 0.3s ease-out;
 }
 
 .btn-create:hover {
   background: var(--blue-300);
- }
+}
+
+.btn-create:disabled{
+  background-color: black;
+  opacity: 50%;
+  cursor: default;
+  transition: opacity 1s ease-out;
+}
+
+.btn-create:hover:disabled{
+  background-color: black;
+  opacity: 50%;
+}
